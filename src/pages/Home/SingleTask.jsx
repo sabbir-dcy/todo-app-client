@@ -6,10 +6,13 @@ const SingleTask = ({ task, refetch }) => {
   const [pending, setPompleted] = useState(false)
   const { name, description, _id } = task
   const handleDelete = () => {
-    axios.delete(`http://localhost:5000/task/${_id}`).then((res) => {
-      console.log(res)
-      refetch()
-    })
+    axios
+      .delete(`https://sheltered-springs-35366.herokuapp.com/task/${_id}`)
+      .then((res) => {
+        console.log(res)
+        toast.success('task removed')
+        refetch()
+      })
   }
 
   const handleComplete = () => {
@@ -23,10 +26,7 @@ const SingleTask = ({ task, refetch }) => {
         <p className={`${pending && 'line-through'}`}>{description}</p>
       </div>
       <div className='justify-self-end space-x-1'>
-        <button
-          onClick={handleComplete}
-          className='btn-accent'
-        >
+        <button onClick={handleComplete} className='btn-accent'>
           complete
         </button>
         <button onClick={handleDelete} className='btn-delete'>

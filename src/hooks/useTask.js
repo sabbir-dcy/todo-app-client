@@ -7,7 +7,7 @@ export const useTask = () => {
     data: tasks,
     refetch,
   } = useQuery('repoData', () =>
-    fetch('http://localhost:5000/task').then((res) => res.json())
+    fetch('https://sheltered-springs-35366.herokuapp.com/task').then((res) => res.json())
   )
   if (isLoading) return 'Loading...'
 
