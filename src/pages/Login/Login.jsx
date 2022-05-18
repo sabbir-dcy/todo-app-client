@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useFirebase } from '../../hooks/useFirebase'
 
 const Login = () => {
-  const { loginUser } = useFirebase()
+  const { loginUser, googleUser } = useFirebase()
   const {
     register,
     handleSubmit,
@@ -70,19 +70,15 @@ const Login = () => {
             <p className='text-red-500'>{errors.password.message}</p>
           )}
         </div>
-        <div>
-          <Link
-            to='/account/reset_pass'
-            className='block text-center underline text-secondary font-medium'
-          >
-            forgot password
-          </Link>
-        </div>
+        
         <button type='submit' className='btn-primary p-3 w-full'>
           login
         </button>
       </form>
-      <button className='w-full btn-secondary p-3 mt-5'>
+      <button
+        onClick={() => googleUser.handleGoogleSignin()}
+        className='w-full btn-secondary p-3 mt-5'
+      >
         Sign in with google
       </button>
       <div className='mt-4 text-center'>

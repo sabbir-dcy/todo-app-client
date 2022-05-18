@@ -20,7 +20,8 @@ const AddTask = () => {
     console.log(data)
   }
   return (
-    <div className='w-1/4 mx-auto '>
+    <div className='w-4/5 sm:w-3/5 md:w-1/2 lg:w-2/5 mx-auto bg-base-100 shadow-xl p-4 rounded-xl mt-40'>
+      <h2 className='title-center'>Add Task</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className='flex flex-col'>
           <label htmlFor='name'>Task Name</label>
@@ -34,7 +35,8 @@ const AddTask = () => {
         </div>
         <div className='flex flex-col'>
           <label htmlFor='name'>Description</label>
-          <input
+          <textarea
+            rows={3}
             className='input-box'
             name='description'
             type='text'

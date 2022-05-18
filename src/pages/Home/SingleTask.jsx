@@ -22,14 +22,14 @@ const SingleTask = ({ task, refetch }) => {
         <h2 className={`${pending && 'line-through'} title-start`}>{name}</h2>
         <p className={`${pending && 'line-through'}`}>{description}</p>
       </div>
-      <div className='justify-self-center space-x-1'>
+      <div className='justify-self-end space-x-1'>
         <button
           onClick={handleComplete}
-          className='btn-accent justify-self-end'
+          className='btn-accent'
         >
           complete
         </button>
-        <button onClick={handleDelete} className='btn-delete justify-self-end'>
+        <button onClick={handleDelete} className='btn-delete'>
           delete
         </button>
       </div>
