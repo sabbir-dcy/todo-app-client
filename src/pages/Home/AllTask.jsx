@@ -1,5 +1,5 @@
 import React from 'react'
-import { useTask } from '../hooks/useTask'
+import { useTask } from '../../hooks/useTask'
 import SingleTask from './SingleTask'
 
 const AllTask = () => {
