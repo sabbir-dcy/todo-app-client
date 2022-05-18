@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { useTask } from '../hooks/useTask'
 
 const AddTask = () => {
   const {
@@ -8,11 +9,13 @@ const AddTask = () => {
     handleSubmit,
     formState: { errors },
   } = useForm()
+  const { refetch } = useTask()
 
   const onSubmit = (data) => {
-    axios
-      .post(`http://localhost:5000/task`, data)
-      .then((res) => console.log(res))
+    axios.post(`http://localhost:5000/task`, data).then((res) => {
+      console.log(res)
+      refetch()
+    })
     console.log(data)
   }
   return (
