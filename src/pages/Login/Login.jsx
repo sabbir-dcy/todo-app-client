@@ -83,7 +83,7 @@ const Login = () => {
       </button>
       <div className='mt-4 text-center'>
         <button
-          className='underline font-medium'
+          className='underline font-medium text-blue-600'
           onClick={() =>
             navigate('/register', {
               // replace: true,
@@ -91,7 +91,7 @@ const Login = () => {
             })
           }
         >
-          I dont have account
+          don't have account?
         </button>
       </div>
     </div>
